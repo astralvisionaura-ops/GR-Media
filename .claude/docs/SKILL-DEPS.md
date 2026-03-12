@@ -56,6 +56,15 @@ skill frontmatter hooks
 | `init-project` | `compliance-audit` | `/compliance-audit` in Step 5 |
 | `team-consult` | any agent | Agent tool (dynamic, topic-based) |
 
+## Known Runtime Limitations (Live-Verified 2026-03-12)
+
+| Observation | Root Cause | Impact |
+|---|---|---|
+| "Unknown skill: X" warning on first invocation | Skill not yet in autocomplete index at session start | Cosmetic only — skill executes correctly |
+| Agent tool unavailable in `context: fork` skills | Deferred tool resolution doesn't work in forked skill contexts | `team-consult` falls back to inline consultation (quality unaffected) |
+| `disable-model-invocation: true` blocks sub-skill calls | Working as designed | Skills with this flag fall back to inline execution |
+| SessionStart hook output invisible to user | Hook injects context into Claude, not into terminal stdout | Working as designed — Claude receives project identity |
+
 ## Update Protocol
 
 When a skill is added or changes its delegation behavior:

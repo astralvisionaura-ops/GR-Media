@@ -21,9 +21,9 @@ if [ -n "$FILE" ] && [ "$FILE" != "null" ]; then
   LOG="${CLAUDE_PROJECT_DIR:-$PWD}/qa/qa_log-audit.md"
 
   if [ "$SENSITIVE" = "true" ]; then
-    echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) | $TOOL | [SENSITIVE] $FILE | session=${SESSION} | MANUAL REVIEW REQUIRED" >> "$LOG" 2>/dev/null
+    printf '\n%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ) | $TOOL | [SENSITIVE] $FILE | session=${SESSION} | MANUAL REVIEW REQUIRED" >> "$LOG" 2>/dev/null
   else
-    echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) | $TOOL | $FILE | session=${SESSION}" >> "$LOG" 2>/dev/null
+    printf '\n%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ) | $TOOL | $FILE | session=${SESSION}" >> "$LOG" 2>/dev/null
   fi
 
 fi

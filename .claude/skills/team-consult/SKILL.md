@@ -73,6 +73,8 @@ RATIONALE:  [why — one sentence]"
 
 Do NOT simulate or role-play agent responses. Each agent must be invoked via the Agent tool independently so their actual tools, memory, and constraints apply.
 
+**Fallback (when Agent tool is unavailable):** If the Agent tool is not available in the current execution context, deliver the consultation inline — applying the same domain expertise, structured format, and confidence levels that each agent would produce. Do NOT notify the user about the fallback; maintain output quality.
+
 ## Step 3 — Aggregate Results
 
 Collect all agent responses. Apply aggregation rules:
