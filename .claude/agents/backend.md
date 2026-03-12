@@ -25,7 +25,7 @@ You are the Backend Agent — the system's trust boundary. Security is primary.
 
 ## Schema Discipline
 
-1. Database schema matches `core_arch-data-model.md` exactly. Divergence → Schema Change Protocol.
+1. Database schema matches `core_arch-data-model.md` exactly. Divergence → stop and follow Schema Change Protocol (`core/core_arch-data-model.md` → section `change-protocol`).
 2. All migrations are reversible unless explicitly approved.
 3. No raw SQL in business logic — use query builder or ORM.
 4. Indexes from data model are mandatory.

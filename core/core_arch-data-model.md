@@ -101,20 +101,43 @@ REVERSIBLE: YES | NO — [if NO: explicit justification required]
 
 ## [SECTION] change-protocol
 
-Changes to this document after GATE-01:
+**Schema Change Protocol** — any change to this document after GATE-01 follows these steps:
 
 ```
-1. Agent identifies need for schema change
-2. Agent reports to Orchestrator: SCHEMA CHANGE REQUEST
-   Content: what, why, impact on: frontend | backend | data | migration
-3. Architecture agent evaluates and updates this document
-4. New ADR written for the change
-5. Backend agent receives updated schema before implementing
-6. Migration script written and reviewed before deployment
-7. Audit log entry: SCHEMA CHANGE — [description]
+STEP  WHO                  ACTION
+────  ───────────────────  ────────────────────────────────────────────────────
+1     backend / any agent  Identifies schema divergence — STOPS implementation
+2     backend / any agent  Issues formal SCHEMA CHANGE REQUEST to Instructor:
+
+      SCHEMA CHANGE REQUEST
+      ─────────────────────
+      Requested by:  [agent name]
+      Date:          [YYYY-MM-DD]
+      Change:        [what needs to change — table, column, type, constraint]
+      Reason:        [why current schema is insufficient]
+      Impact:
+        frontend:    [affected UI / API calls]
+        backend:     [affected endpoints / queries]
+        data:        [migration complexity: additive | destructive | rename]
+        compliance:  [PII-registry update needed? GDPR implications?]
+      Reversible:    YES / NO — [if NO: explicit Instructor approval required]
+
+3     Instructor           Reviews and approves or rejects the request
+4     architecture agent   Updates this document (core_arch-data-model.md)
+5     architecture agent   Writes ADR documenting the decision
+6     backend agent        Receives updated schema, then implements
+7     backend agent        Writes reversible migration script
+8     qm agent             Reviews migration before deployment
+9     any agent            Appends to qa/qa_log-audit.md:
+                           SCHEMA CHANGE — [table.column] — [reason] — approved by Instructor
 ```
 
-No unilateral schema changes. Every change follows this protocol.
+**Approval by class:**
+- Class 1/2: Instructor confirmation in chat
+- Class 3: Instructor sign-off + ADR required
+- Class 4: Instructor sign-off + ADR + external review if PII-registry changes
+
+**No unilateral schema changes.** An agent that discovers a divergence must stop and follow this protocol — not implement around it.
 
 -----
 
