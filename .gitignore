@@ -8,3 +8,17 @@ CLAUDE.local.md
 node_modules/
 .env
 .env.local
+
+# Projekt-spezifische Artefakte (gehören nicht ins Master-Template)
+src/
+supabase/
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+_archive_template_v2/
+dist/
+build/
+.next/
+.nuxt/
+out/
