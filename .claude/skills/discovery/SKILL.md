@@ -37,6 +37,10 @@ Receive project description from the user. Analyze for:
 - web, app, frontend, UI, digital product (EU market, public-facing) → EAA 2025 (mandatory WCAG 2.1 AA from June 28, 2025)
 - identity, eID, digital wallet, cross-border authentication (EU) → eIDAS 2.0
 - third-country data transfer, US cloud provider, non-EU hosting → GDPR Art. 44–49 / Schrems II
+- German government, Bundesbehörde, Bund, Land, Gemeinde, öffentliche Verwaltung → BSI IT-Grundschutz (BSI-Standard 200-1/2/3)
+- KRITIS, kritische Infrastruktur, §8a BSIG, Betreiber kritischer Infrastrukturen → BSI IT-Grundschutz + NIS2 (KRITIS overlap)
+- VS-NfD, Verschlusssache, classified, Geheimschutz → BSI IT-Grundschutz Kern-Absicherung + VSA
+- BSI-Zertifizierung, Common Criteria, ISO 27001 auf IT-Grundschutz-Basis → BSI IT-Grundschutz
 
 **Complexity Signals**: team size, external users, multi-tenant, regulated industry
 

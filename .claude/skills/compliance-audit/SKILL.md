@@ -47,16 +47,22 @@ Scan the project for keyword triggers:
 | web, frontend, UI, app, digital product, SaaS (EU market, public-facing) | EAA 2025 (European Accessibility Act), WCAG 2.1 AA | HIGH |
 | identity, authentication, eID, digital wallet, cross-border (EU) | eIDAS 2.0 | MEDIUM |
 | data transfer, third-country, US provider, cloud (non-EU) | GDPR Art. 44–49, Schrems II (standard contractual clauses) | HIGH |
+| German government, Bundesbehörde, Bund, Land, Gemeinde, öffentliche Verwaltung | BSI IT-Grundschutz (BSI-Standard 200-1/2/3/4) | HIGH |
+| KRITIS, kritische Infrastruktur, §8a BSIG, Betreiber kritischer Infrastrukturen | BSI IT-Grundschutz Standard-Absicherung + NIS2 | HIGH |
+| VS-NfD, Verschlusssache, classified, Geheimschutz, Bundeswehr | BSI IT-Grundschutz Kern-Absicherung, VSA (Verschlusssachenanweisung) | CRITICAL |
+| BSI-Zertifizierung, Common Criteria, ISO 27001 auf IT-Grundschutz-Basis, UP Bund | BSI IT-Grundschutz Kompendium, Umsetzungsplan Bund | MEDIUM |
 
 **NIS2 note**: Applies to medium/large entities (50+ employees OR €10M+ revenue) in essential sectors (energy, transport, health, digital infrastructure, banking) and important sectors (digital providers, manufacturing, postal, food). ICT products serving these sectors may also fall in scope as third-party providers.
 
 **DORA note**: Applies to financial entities AND their ICT third-party service providers. If the software IS a financial service or is sold to financial entities, DORA compliance is mandatory from Jan 2025.
 
+**BSI IT-Grundschutz note**: Mandatory for German federal agencies (Bundesbehörden) via UP Bund (Umsetzungsplan Bund). Three protection levels: Basis-Absicherung (essential), Standard-Absicherung (standard, most agencies), Kern-Absicherung (crown-jewel assets). KRITIS operators (§8a BSIG) must document Standard-Absicherung and submit proof to BSI every 2 years. VS-NfD classification triggers Kern-Absicherung plus Verschlusssachenanweisung (VSA) — escalate to Class 4 and specialist legal counsel immediately.
+
 ## Step 2 — Priority Assignment
 
 - **CRITICAL**: No legal basis for PII, no MDR classification, no AI Act classification, no NIS2 incident reporting plan (where applicable), active data breach
-- **HIGH**: GDPR DPIA required, DORA ICT Risk Management Framework missing, NIS2 security measures undocumented, SOC 2 Type I required, ISO 27001 scope undefined, IEC 62304 docs incomplete, EAA 2025 WCAG 2.1 AA not implemented (EU-facing digital product post June 28, 2025), Schrems II SCC missing for third-country data transfers
-- **MEDIUM**: Cookie consent, privacy policy, DPA with processors, vulnerability disclosure, NIS2 supplier security assessment, DORA third-party risk register, eIDAS 2.0 compliance scope assessment, NIS2 incident reporting procedure missing
+- **HIGH**: GDPR DPIA required, DORA ICT Risk Management Framework missing, NIS2 security measures undocumented, SOC 2 Type I required, ISO 27001 scope undefined, IEC 62304 docs incomplete, EAA 2025 WCAG 2.1 AA not implemented (EU-facing digital product post June 28, 2025), Schrems II SCC missing for third-country data transfers, BSI IT-Grundschutz Basis-Absicherung not documented for Bundesbehörde, BSI Standard-Absicherung scope undefined for KRITIS operator
+- **MEDIUM**: Cookie consent, privacy policy, DPA with processors, vulnerability disclosure, NIS2 supplier security assessment, DORA third-party risk register, eIDAS 2.0 compliance scope assessment, NIS2 incident reporting procedure missing, BSI IT-Grundschutz Kompendium Bausteine not mapped, Umsetzungsplan Bund (UP Bund) not assessed
 - **LOW**: WCAG AAA, ISO 27001 certification vs conformance, DORA TLPT (systemic-level only), eIDAS 2.0 wallet integration (if not in scope)
 
 ## Step 3 — Detection Report
