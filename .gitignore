@@ -1,0 +1,10 @@
+# Persönliche Claude-Overrides — nicht committen
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Lokale Entwicklungsartefakte
+.DS_Store
+*.log
+node_modules/
+.env
+.env.local
