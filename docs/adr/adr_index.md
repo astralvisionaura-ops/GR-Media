@@ -27,12 +27,14 @@ NEVER DELETE:           Superseded and rejected ADRs stay in the index.
 ## [SECTION] index
 
 ```
-ADR-NNN   STATUS      TITLE                           DATE        SUPERSEDES
-──────────────────────────────────────────────────────────────────────────────
-ADR-000   ACCEPTED    ADR template                    [date]      —
+ADR-NNN   STATUS      TITLE                                    DATE        SUPERSEDES
+──────────────────────────────────────────────────────────────────────────────────────
+ADR-000   ACCEPTED    ADR template                             —           —
+ADR-001   ACCEPTED    Framework Selection (Next.js 14)         2026-03-13  —
+ADR-002   ACCEPTED    Auth and Database (Supabase)             2026-03-13  —
+ADR-003   ACCEPTED    Blog Strategy (Git/Markdown, no CMS)     2026-03-13  —
+ADR-004   ACCEPTED    File Delivery (Supabase Storage + URLs)  2026-03-13  —
 ```
-
-[Add one row per ADR. Most recent last.]
 
 -----
 
@@ -50,15 +52,12 @@ REJECTED     Considered and explicitly declined
 
 ## [SECTION] decisions-by-topic
 
-Grouped view for quick navigation:
-
 ```
-API DESIGN:         ADR-[NNN]
-DATABASE:           ADR-[NNN]
-AUTHENTICATION:     ADR-[NNN]
-FRONTEND FRAMEWORK: ADR-[NNN]
-INFRASTRUCTURE:     ADR-[NNN]
-COMPLIANCE:         ADR-[NNN]
+FRONTEND FRAMEWORK:   ADR-001  (Next.js 14 App Router)
+AUTHENTICATION:       ADR-002  (Supabase Auth)
+DATABASE:             ADR-002  (Supabase PostgreSQL)
+OBJECT STORAGE:       ADR-004  (Supabase Storage + signed URLs)
+BLOG / CONTENT:       ADR-003  (Git/Markdown)
+FILE DELIVERY:        ADR-004  (signed URLs, private buckets)
+COMPLIANCE (GDPR):    ADR-002, ADR-004 (Privacy by Design assessments)
 ```
-
-[Update groups as ADRs are added. Add new topic groups as needed.]

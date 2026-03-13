@@ -15,47 +15,53 @@ AUDIENCE:   Instructor, stakeholders, all agents
 ## [SECTION] document-header
 
 ```
-PROJECT:        [PROJECT NAME]
-VERSION:        0.1.0
-STATUS:         DRAFT
-DATE:           [YYYY-MM-DD]
-AUTHOR:         [Instructor Name]
-CLASS:          [1 | 2 | 3 | 4]
+PROJECT:        GR-Media
+VERSION:        1.0.0
+STATUS:         FINAL
+DATE:           2026-03-13
+AUTHOR:         Instructor
+CLASS:          2
 ```
 
 -----
 
 ## [SECTION] executive-summary
 
-**Project:** [PROJECT NAME]
-**Vision:** [One sentence: what this product does and for whom.]
-**Problem statement:** [What problem does this solve? Why does it matter now?]
-**Success definition:** [How will we know this project succeeded?]
+**Project:** GR-Media — Photography Business Website Rebuild
+**Vision:** A modern, visually stunning web presence for GR Media that converts visiting prospects into photography clients through an immersive portfolio experience and a secure client portal.
+**Problem statement:** The existing website no longer reflects the quality and range of GR Media's work. Potential clients arrive but do not stay — the site lacks the visual impact and functionality (blog, client portal) needed to generate leads and build client relationships.
+**Success definition:** The new site launches with measurable improvements in visitor engagement (time on site, inquiry conversions), includes a working client portal for existing clients, and scores green on Core Web Vitals.
 
 -----
 
 ## [SECTION] target-audience
 
-**Primary users:** [Who uses this product directly?]
-**Secondary stakeholders:** [Who is affected by or cares about this product?]
-**User context:** [Where, when, and how do they use it? What are their constraints?]
+**Primary users:** Prospective photography clients — individuals and couples seeking photographers for weddings, portrait sessions, and commercial work. They are comparing options online and make decisions based on visual impression and ease of contact.
+**Secondary stakeholders:** Social media managers and referral partners who embed or share GR Media content to generate leads. GR Media owner/photographer (portal admin).
+**User context:** Users arrive via social media, referrals, or organic search. They browse on mobile and desktop. Their key question on arrival: "Is this photographer's style right for me?" They want to see work fast, understand pricing/services, and contact easily.
 
 -----
 
 ## [SECTION] scope-definition
 
-**In Scope (current class):**
-- [Feature or capability 1]
-- [Feature or capability 2]
-- [Feature or capability 3]
+**In Scope (Class 2):**
+- Full website rebuild: homepage, portfolio/gallery, services, about, contact
+- Blog (content marketing, SEO)
+- Client portal (login, secure photo delivery / file access)
+- GDPR-compliant contact form and cookie consent
+- Mobile-first responsive design based on GR Media brand schema
+- Privacy policy and legal pages
 
 **Out of Scope (explicitly excluded):**
-- [What will NOT be built in this version]
-- [Future capability deferred to next class/phase]
+- E-commerce / online booking / payment processing (deferred)
+- CRM integration (deferred)
+- Advanced analytics dashboard (deferred)
+- Multi-language support (deferred)
 
 **Assumptions:**
-- [Assumption 1 — if wrong, scope changes]
-- [Assumption 2]
+- Brand assets (logo, color schema, design konfigurator) will be provided by client before implementation begins
+- Content (copy, photography) will be provided by client or derived from existing site screenshots
+- Hosting infrastructure is greenfield — no legacy system migration required
 
 -----
 
@@ -63,33 +69,49 @@ CLASS:          [1 | 2 | 3 | 4]
 
 | Metric | Target | Measurement method |
 |--------|--------|--------------------|
-| [e.g., Page load time] | [e.g., LCP < 2.5s] | [e.g., Lighthouse CI] |
-| [e.g., User activation] | [e.g., 60% complete onboarding] | [e.g., analytics event] |
-| [e.g., Error rate] | [e.g., < 0.1% 5xx] | [e.g., monitoring dashboard] |
+| Core Web Vitals — LCP | < 2.5s | Lighthouse CI / PageSpeed Insights |
+| Core Web Vitals — CLS | < 0.1 | Lighthouse CI |
+| Mobile performance score | ≥ 90 | Lighthouse CI |
+| Contact form conversion | Baseline established at launch | Analytics event |
+| GDPR compliance | Zero cookie/tracking violations | Manual audit + browser inspector |
 
 -----
 
 ## [SECTION] constraints
 
-**Technical constraints:** [Stack decisions already made, infrastructure limits, existing integrations]
-**Business constraints:** [Budget, timeline, regulatory deadlines, team size]
-**Non-negotiable requirements:** [Security, compliance, accessibility — link to compliance findings]
+**Technical constraints:** Native web languages preferred (HTML/CSS/JS); framework selection guided by T1 best practices (Astro or Next.js 14). No legacy system dependencies.
+**Business constraints:** No hard deadline or budget limit stated. Quality over speed — professional, stable, best-practices-first.
+**Non-negotiable requirements:** GDPR compliance (cookie consent, privacy policy, data minimization on forms); EAA accessibility baseline (effective June 2025); Core Web Vitals green on launch.
+
+-----
+
+## [SECTION] brand-notes
+
+- Design schema: `brand/gr-media-konfigurator.html` (to be created/provided)
+- Logo: `brand/assets/image-384x257.png` (to be created/provided)
+- Existing site content reference: `brand/screenshots/` (to be created/provided)
+- Visual tone: immersive, high-quality imagery; visitor should feel compelled to stay and explore
 
 -----
 
 ## [SECTION] open-questions
 
-| Question | Owner | Due |
-|----------|-------|-----|
-| [Decision needed] | [Instructor / Agent] | [Date or Gate] |
+All questions resolved. No open items.
+
+| Question | Resolution | ADR |
+|----------|-----------|-----|
+| Brand assets (konfigurator, logo, screenshots) | Provided in `brand/` directory before implementation | — |
+| CMS for blog? | No CMS — Git/Markdown, code-managed | ADR-003 |
+| Client portal content? | Galleries (photos) + Documents (invoices, contracts) | ADR-004 |
+| Hosting provider? | Vercel (CDN + SSR) + Supabase Cloud (Auth, DB, Storage) EU region | ADR-001/002 |
 
 -----
 
 ## [SECTION] approval
 
 ```
-Reviewed by:   [Name]
-Approved by:   [Instructor Name]
-Approval date: [YYYY-MM-DD]
-Next review:   [GATE-02 | GATE-05 | as needed]
+Reviewed by:   Instructor
+Approved by:   Instructor
+Approval date: 2026-03-13
+Next review:   GATE-04 (before production deployment)
 ```

@@ -2,6 +2,11 @@
 CLAUDE.local.md
 .claude/settings.local.json
 
+# Client-Briefs und Brand-Assets — projektspezifisch, nie committen
+docs/prd/Client-PRD.md
+Client-PRD*.md
+brand/
+
 # Lokale Entwicklungsartefakte
 .DS_Store
 *.log
@@ -10,15 +15,21 @@ node_modules/
 .env.local
 
 # Projekt-spezifische Artefakte (gehören nicht ins Master-Template)
-src/
-supabase/
-package.json
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 _archive_template_v2/
 dist/
 build/
+
+# Next.js
 .next/
-.nuxt/
 out/
+node_modules/
+
+# Environment
+.env.local
+.env.*.local
+
+# Supabase
+.supabase/
+
+# OS
+.DS_Store

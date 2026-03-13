@@ -15,7 +15,7 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/skill-complete.sh gate-check"
+          command: "$HOME/.claude/hooks/skill-complete.sh gate-check"
           async: true
 ---
 

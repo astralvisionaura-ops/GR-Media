@@ -61,10 +61,27 @@ v2.0.0   [YYYY-MM-DD]   Initial release of Master Template Version 2
 ## Product Version History
 
 ```
-## [0.1.0-alpha] — 2026-03-11
+## [0.2.0-alpha] — 2026-03-13
 
 ### Added
-- Project initialized (Test-SaaS) [TEST]
+- Next.js 14.2.35 project scaffold (src/ App Router, TypeScript, Tailwind CSS)
+- Tailwind design tokens from brand konfigurator (colors, fonts, radius)
+- Supabase integration: client.ts, server.ts, middleware with /portal/** protection
+- Contact form API route (POST /api/contact) with Zod validation + rate limiting
+- Supabase schema migration: 7 tables (admins, client_profiles, galleries,
+  gallery_images, documents, blog_post_meta, contact_submissions) — full RLS
+- Local dev setup: supabase/config.toml, migrations, seed.sql
+- .env.local.example with all required env vars
+- GATE-01 PASS (Architecture Review), GATE-02 PASS (Scope Confirmation)
+- Phase: IMPLEMENTATION
+
+## [0.1.0-alpha] — 2026-03-13
+
+### Added
+- Project initialized: GR-Media
+- Class 2 assigned, Domain: web-saas, Phase: SPECIFICATION
+- prd_spec-overview.md FINAL
+- Compliance findings: GDPR (HIGH), EAA 2025 (HIGH)
 ```
 
 [Example:]

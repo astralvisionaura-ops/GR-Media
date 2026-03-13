@@ -10,7 +10,7 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/skill-complete.sh compliance-audit"
+          command: "$HOME/.claude/hooks/skill-complete.sh compliance-audit"
           async: true
 ---
 

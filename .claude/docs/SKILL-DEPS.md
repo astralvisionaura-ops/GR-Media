@@ -43,8 +43,12 @@ settings.json hooks
   └── Stop          → hooks/update-session.sh
 
 skill frontmatter hooks
-  ├── gate-check/SKILL.md → Stop → hooks/skill-complete.sh gate-check
-  └── compliance-audit/SKILL.md → Stop → hooks/skill-complete.sh compliance-audit
+  ├── gate-check/SKILL.md → Stop → $HOME/.claude/hooks/skill-complete.sh gate-check
+  └── compliance-audit/SKILL.md → Stop → $HOME/.claude/hooks/skill-complete.sh compliance-audit
+
+Note: Other skills (init-project, discovery, best-practices, team-consult, class-migration,
+retrospective) intentionally have NO skill-complete hook — they are orchestration
+skills or sub-skills invoked by init-project.
 ```
 
 ## Skills That Can Trigger Each Other
