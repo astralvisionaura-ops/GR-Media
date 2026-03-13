@@ -23,6 +23,7 @@ build/
 .next/
 out/
 node_modules/
+tsconfig.tsbuildinfo
 
 # Environment
 .env.local
