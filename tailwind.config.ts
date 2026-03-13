@@ -19,8 +19,8 @@ const config: Config = {
         border:  '#2a2a2a',
       },
       fontFamily: {
-        sans:    ['DM Sans', 'sans-serif'],
-        display: ['Syne', 'sans-serif'],
+        sans:    ['var(--font-dm-sans)', 'sans-serif'],
+        display: ['var(--font-syne)', 'sans-serif'],
       },
       fontSize: {
         hero: ['clamp(2.5rem, 6vw, 4.5rem)', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
