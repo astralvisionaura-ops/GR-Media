@@ -15,7 +15,7 @@ export default function ContactPage() {
         <p className="flex items-center gap-3 text-[0.75rem] font-sans font-medium tracking-[0.2em] uppercase text-[#c8ff00] mb-4 before:content-[''] before:w-8 before:h-px before:bg-[#c8ff00]">
           Schreiben Sie mir
         </p>
-        <h1 className="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-[#f5f3ee] tracking-tight mb-16">
+        <h1 className="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-[var(--text)] tracking-tight mb-16">
           Kontakt aufnehmen
         </h1>
 
@@ -25,8 +25,8 @@ export default function ContactPage() {
 
           {/* Contact info card */}
           <aside>
-            <div className="rounded-[12px] border border-[#2a2a2a] bg-[#1a1a1a] p-8">
-              <h2 className="font-display font-bold text-lg text-[#f5f3ee] mb-6">
+            <div className="rounded-[12px] border border-[var(--border)] bg-[var(--bg-surface)] p-8">
+              <h2 className="font-display font-bold text-lg text-[var(--text)] mb-6">
                 Kontaktdaten
               </h2>
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
                   <dd>
                     <a
                       href="mailto:ronny-goersch@g-r-media.de"
-                      className="font-sans text-sm text-[#f5f3ee] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[2px]"
+                      className="font-sans text-sm text-[var(--text)] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[2px]"
                     >
                       ronny-goersch@g-r-media.de
                     </a>
@@ -49,7 +49,7 @@ export default function ContactPage() {
                   <dt className="text-[0.75rem] font-sans font-medium tracking-[0.15em] uppercase text-[#c8ff00] mb-1">
                     Adresse
                   </dt>
-                  <dd className="font-sans text-sm text-[#888] leading-relaxed">
+                  <dd className="font-sans text-sm text-[var(--text-muted)] leading-relaxed">
                     Große Straße 13
                     <br />
                     39326 Groß Ammensleben
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   <dt className="text-[0.75rem] font-sans font-medium tracking-[0.15em] uppercase text-[#c8ff00] mb-1">
                     Antwortzeit
                   </dt>
-                  <dd className="font-sans text-sm text-[#888] leading-relaxed">
+                  <dd className="font-sans text-sm text-[var(--text-muted)] leading-relaxed">
                     Ich antworte in der Regel innerhalb von 24 Stunden.
                   </dd>
                 </div>

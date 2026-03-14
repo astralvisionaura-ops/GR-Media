@@ -33,7 +33,7 @@ export default function AboutPage() {
         <p className="flex items-center gap-3 text-[0.75rem] font-sans font-medium tracking-[0.2em] uppercase text-[#c8ff00] mb-4 before:content-[''] before:w-8 before:h-px before:bg-[#c8ff00]">
           Über GR Media
         </p>
-        <h1 className="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-[#f5f3ee] tracking-tight mb-16">
+        <h1 className="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-[var(--text)] tracking-tight mb-16">
           Erfahrung trifft Kreativität
         </h1>
 
@@ -46,12 +46,12 @@ export default function AboutPage() {
             <h2 id="about-bio" className="sr-only">
               Über Ronny Goersch
             </h2>
-            <p className="font-sans font-light text-[#888] leading-relaxed text-base mb-6">
+            <p className="font-sans font-light text-[var(--text-muted)] leading-relaxed text-base mb-6">
               G.R. Media – Ihre Vision ist mein Fokus. Ich biete hochwertige
               Fotografie-Dienstleistungen und individuelles Social-Media-Marketing, das exakt
               auf Ihre Bedürfnisse zugeschnitten ist.
             </p>
-            <p className="font-sans font-light text-[#888] leading-relaxed text-base mb-8">
+            <p className="font-sans font-light text-[var(--text-muted)] leading-relaxed text-base mb-8">
               Mein Ziel ist es, Ihre Ideen in eindrucksvolle visuelle Erlebnisse zu verwandeln
               — kreativ, professionell und authentisch. Egal ob Portrait, Hochzeit, Immobilien,
               Sport oder Automotive: Ich bringe die Persönlichkeit hinter dem Motiv zum
@@ -68,10 +68,10 @@ export default function AboutPage() {
           {/* Accent block */}
           <div
             aria-hidden="true"
-            className="rounded-[12px] bg-[#1a1a1a] border border-[#2a2a2a] p-8 flex flex-col justify-between aspect-[4/3]"
+            className="rounded-[12px] bg-[var(--bg-surface)] border border-[var(--border)] p-8 flex flex-col justify-between aspect-[4/3]"
           >
             <div className="font-display font-extrabold text-6xl text-[#c8ff00]/10">GR</div>
-            <blockquote className="font-display font-bold text-2xl text-[#f5f3ee] tracking-tight leading-tight">
+            <blockquote className="font-display font-bold text-2xl text-[var(--text)] tracking-tight leading-tight">
               &ldquo;Ihr Partner für kreative
               <br />
               <span className="text-[#c8ff00]">und visuelle Lösungen.&rdquo;</span>
@@ -86,7 +86,7 @@ export default function AboutPage() {
           </p>
           <h2
             id="values-heading"
-            className="font-display font-extrabold text-[clamp(1.5rem,3vw,2rem)] text-[#f5f3ee] tracking-tight mb-12"
+            className="font-display font-extrabold text-[clamp(1.5rem,3vw,2rem)] text-[var(--text)] tracking-tight mb-12"
           >
             Was mich antreibt
           </h2>
@@ -94,12 +94,12 @@ export default function AboutPage() {
             {values.map(({ title, description }) => (
               <article
                 key={title}
-                className="rounded-[12px] border border-[#2a2a2a] bg-[#1a1a1a] p-8"
+                className="rounded-[12px] border border-[var(--border)] bg-[var(--bg-surface)] p-8"
               >
                 <h3 className="font-display font-bold text-xl text-[#c8ff00] mb-3">
                   {title}
                 </h3>
-                <p className="font-sans font-light text-[#888] text-sm leading-relaxed">
+                <p className="font-sans font-light text-[var(--text-muted)] text-sm leading-relaxed">
                   {description}
                 </p>
               </article>

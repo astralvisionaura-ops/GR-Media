@@ -1,33 +1,34 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 // Portfolio category tiles
 const portfolioCategories = [
-  { label: 'Portrait',    slug: 'portrait' },
-  { label: 'Hochzeit',    slug: 'hochzeit' },
-  { label: 'Immobilien',  slug: 'immobilien' },
-  { label: 'Sport',       slug: 'sport' },
-  { label: 'Autos',       slug: 'autos' },
-  { label: 'Motorräder',  slug: 'motorrader' },
+  { label: 'Portrait',    slug: 'portrait',   image: '/images/service-fotografie.jpg' },
+  { label: 'Hochzeit',    slug: 'hochzeit',   image: '/images/service-fotografie.jpg' },
+  { label: 'Immobilien',  slug: 'immobilien', image: '/images/service-fotografie.jpg' },
+  { label: 'Sport',       slug: 'sport',      image: '/images/service-fotografie.jpg' },
+  { label: 'Autos',       slug: 'autos',      image: '/images/service-fotografie.jpg' },
+  { label: 'Motorräder',  slug: 'motorrader', image: '/images/service-fotografie.jpg' },
 ]
 
 const services = [
   {
-    icon: '📷',
     title: 'Fotografie',
     description:
       'Hochwertige Fotografie für Portrait, Hochzeit, Sport, Immobilien und mehr.',
+    image: '/images/service-fotografie.jpg',
   },
   {
-    icon: '📱',
     title: 'Social Media Marketing',
     description:
       'Maßgeschneidertes Social-Media-Management, das deine Reichweite steigert.',
+    image: '/images/service-social-media.jpg',
   },
   {
-    icon: '🎬',
     title: 'Videografie',
     description:
       'Von der Idee zum Storytelling — Film, der aus der Masse heraussticht.',
+    image: '/images/service-videografie.jpg',
   },
 ]
 
@@ -55,16 +56,16 @@ export default function HomePage() {
             Fotografie · Social Media · Videografie
           </p>
 
-          <h1 className="font-display font-extrabold text-hero text-[#f5f3ee] text-balance mb-6 max-w-3xl">
+          <h1 className="font-display font-extrabold text-hero text-[var(--text)] text-balance mb-6 max-w-3xl">
             Stilvolle Fotografie
             <br />
             <em className="not-italic text-[#c8ff00]">und Social Media</em>
           </h1>
 
-          <p className="font-sans font-medium text-xl text-[#f5f3ee] mb-4">
+          <p className="font-sans font-medium text-xl text-[var(--text)] mb-4">
             Ihre Vision, mein Handwerk.
           </p>
-          <p className="font-sans font-light text-[#888] text-base leading-relaxed max-w-xl mb-10">
+          <p className="font-sans font-light text-[var(--text-muted)] text-base leading-relaxed max-w-xl mb-10">
             Ihr Partner für kreative und visuelle Lösungen in Groß Ammensleben. Ich verwandle
             Ihre Ideen in eindrucksvolle visuelle Erlebnisse — kreativ, professionell und
             authentisch.
@@ -79,7 +80,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 min-h-[52px] px-8 py-3 rounded-[8px] border border-[#2a2a2a] text-[#f5f3ee] font-sans font-medium text-sm hover:border-[#444] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
+              className="inline-flex items-center gap-2 min-h-[52px] px-8 py-3 rounded-[8px] border border-[var(--border)] text-[var(--text)] font-sans font-medium text-sm hover:border-[var(--border)] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
             >
               Portfolio ansehen
             </Link>
@@ -90,33 +91,41 @@ export default function HomePage() {
       {/* ── Services strip ── */}
       <section
         aria-labelledby="services-heading"
-        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[#2a2a2a]"
+        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[var(--border)]"
       >
         <div className="max-w-[1400px] mx-auto">
           <h2 id="services-heading" className="sr-only">
             Leistungsübersicht
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {services.map(({ icon, title, description }) => (
+            {services.map(({ title, description, image }) => (
               <article
                 key={title}
-                className="group rounded-[12px] border border-[#2a2a2a] bg-[#1a1a1a] p-8 hover:border-[#444] transition-colors duration-200"
+                className="group rounded-[12px] border border-[var(--border)] bg-[var(--bg-surface)] overflow-hidden hover:border-[var(--accent)] transition-colors duration-200"
               >
-                <span className="text-3xl mb-6 block" role="img" aria-hidden="true">
-                  {icon}
-                </span>
-                <h3 className="font-display font-bold text-xl text-[#f5f3ee] mb-3">
-                  {title}
-                </h3>
-                <p className="font-sans font-light text-[#888] leading-relaxed text-sm mb-6">
-                  {description}
-                </p>
-                <span
-                  className="text-[#c8ff00] text-sm font-sans font-medium"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-display font-bold text-xl text-[var(--text)] mb-3">
+                    {title}
+                  </h3>
+                  <p className="font-sans font-light text-[var(--text-muted)] leading-relaxed text-sm mb-6">
+                    {description}
+                  </p>
+                  <span
+                    className="text-[#c8ff00] text-sm font-sans font-medium"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                </div>
               </article>
             ))}
           </div>
@@ -126,7 +135,7 @@ export default function HomePage() {
       {/* ── Portfolio teaser ── */}
       <section
         aria-labelledby="portfolio-heading"
-        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[#2a2a2a]"
+        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[var(--border)]"
       >
         <div className="max-w-[1400px] mx-auto">
           <p className="flex items-center gap-3 text-[0.75rem] font-sans font-medium tracking-[0.2em] uppercase text-[#c8ff00] mb-4 before:content-[''] before:w-8 before:h-px before:bg-[#c8ff00]">
@@ -134,24 +143,30 @@ export default function HomePage() {
           </p>
           <h2
             id="portfolio-heading"
-            className="font-display font-extrabold text-[clamp(1.75rem,4vw,2.5rem)] text-[#f5f3ee] tracking-tight mb-12"
+            className="font-display font-extrabold text-[clamp(1.75rem,4vw,2.5rem)] text-[var(--text)] tracking-tight mb-12"
           >
             Ausgewählte Projekte
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-            {portfolioCategories.map(({ label, slug }) => (
+            {portfolioCategories.map(({ label, slug, image }) => (
               <Link
                 key={slug}
                 href={`/portfolio/${slug}`}
-                className="group relative aspect-[4/3] rounded-[12px] bg-[#1a1a1a] overflow-hidden border border-[#2a2a2a] hover:border-[#444] transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
+                className="group relative aspect-[4/3] rounded-[12px] overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
               >
-                {/* Gradient overlay */}
+                <Image
+                  src={image}
+                  alt={label}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
                 />
-                <span className="absolute bottom-4 left-4 font-display font-bold text-[#f5f3ee] text-lg tracking-tight group-hover:text-[#c8ff00] transition-colors duration-150">
+                <span className="absolute bottom-4 left-4 font-display font-bold text-[var(--text)] text-lg tracking-tight group-hover:text-[#c8ff00] transition-colors duration-150">
                   {label}
                 </span>
               </Link>
@@ -161,7 +176,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/portfolio"
-              className="inline-flex items-center gap-2 min-h-[48px] px-8 py-3 rounded-[8px] border border-[#2a2a2a] text-[#f5f3ee] font-sans font-medium text-sm hover:border-[#444] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
+              className="inline-flex items-center gap-2 min-h-[48px] px-8 py-3 rounded-[8px] border border-[var(--border)] text-[var(--text)] font-sans font-medium text-sm hover:border-[var(--border)] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
             >
               Alle Arbeiten ansehen →
             </Link>
@@ -172,7 +187,7 @@ export default function HomePage() {
       {/* ── About teaser ── */}
       <section
         aria-labelledby="about-heading"
-        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[#2a2a2a]"
+        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[var(--border)]"
       >
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
@@ -182,11 +197,11 @@ export default function HomePage() {
             </p>
             <h2
               id="about-heading"
-              className="font-display font-extrabold text-[clamp(1.75rem,4vw,2.5rem)] text-[#f5f3ee] tracking-tight mb-6"
+              className="font-display font-extrabold text-[clamp(1.75rem,4vw,2.5rem)] text-[var(--text)] tracking-tight mb-6"
             >
               Erfahrung trifft Kreativität
             </h2>
-            <p className="font-sans font-light text-[#888] leading-relaxed mb-8">
+            <p className="font-sans font-light text-[var(--text-muted)] leading-relaxed mb-8">
               G.R. Media – Ihre Vision ist mein Fokus. Ich biete hochwertige
               Fotografie-Dienstleistungen und individuelles Social-Media-Marketing, das exakt
               auf Ihre Bedürfnisse zugeschnitten ist. Mein Ziel ist es, Ihre Ideen in
@@ -195,18 +210,23 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 min-h-[48px] px-6 py-3 rounded-[8px] border border-[#2a2a2a] text-[#f5f3ee] font-sans font-medium text-sm hover:border-[#444] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
+              className="inline-flex items-center gap-2 min-h-[48px] px-6 py-3 rounded-[8px] border border-[var(--border)] text-[var(--text)] font-sans font-medium text-sm hover:border-[var(--border)] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00]"
             >
               Mehr erfahren →
             </Link>
           </div>
 
-          {/* Accent block */}
-          <div
-            aria-hidden="true"
-            className="hidden lg:flex rounded-[12px] bg-[#1a1a1a] border border-[#2a2a2a] aspect-[4/3] items-end p-8"
-          >
-            <blockquote className="font-display font-bold text-2xl text-[#f5f3ee] tracking-tight leading-tight">
+          {/* About image with quote overlay */}
+          <div className="hidden lg:block relative rounded-[12px] overflow-hidden aspect-[4/3]">
+            <Image
+              src="/images/service-fotografie.jpg"
+              alt="Ronny Goersch bei der Arbeit"
+              fill
+              className="object-cover"
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+            <blockquote className="absolute bottom-8 left-8 right-8 font-display font-bold text-2xl text-[#f5f3ee] tracking-tight leading-tight">
               &ldquo;Ihre Vision ist
               <br />
               <span className="text-[#c8ff00]">mein Fokus.&rdquo;</span>
@@ -218,16 +238,16 @@ export default function HomePage() {
       {/* ── CTA section ── */}
       <section
         aria-labelledby="cta-heading"
-        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[#c8ff00]/20 bg-[#0f0f0f]"
+        className="py-24 px-4 md:px-8 lg:px-16 xl:px-24 border-t border-[#c8ff00]/20 bg-[var(--bg-deep)]"
       >
         <div className="max-w-[1400px] mx-auto text-center">
           <h2
             id="cta-heading"
-            className="font-display font-extrabold text-[clamp(1.75rem,4vw,2.75rem)] text-[#f5f3ee] tracking-tight mb-4"
+            className="font-display font-extrabold text-[clamp(1.75rem,4vw,2.75rem)] text-[var(--text)] tracking-tight mb-4"
           >
             Bereit für das nächste Level?
           </h2>
-          <p className="font-sans font-light text-[#888] text-lg mb-10">
+          <p className="font-sans font-light text-[var(--text-muted)] text-lg mb-10">
             Lassen Sie uns gemeinsam arbeiten!
           </p>
           <Link

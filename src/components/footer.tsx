@@ -3,13 +3,13 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#2a2a2a] bg-[#0a0a0a]" role="contentinfo">
+    <footer className="border-t border-[var(--border)] bg-[var(--bg)]" role="contentinfo">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 xl:px-24 py-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Logo */}
           <Link
             href="/"
-            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[4px]"
+            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] rounded-[4px]"
             aria-label="GR Media — Startseite"
           >
             <Image
@@ -27,7 +27,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-sm font-sans text-[#888] hover:text-[#f5f3ee] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[4px]"
+                  className="text-sm font-sans text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] rounded-[4px]"
                 >
                   Datenschutz
                 </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/imprint"
-                  className="text-sm font-sans text-[#888] hover:text-[#f5f3ee] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[4px]"
+                  className="text-sm font-sans text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] rounded-[4px]"
                 >
                   Impressum
                 </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:ronny-goersch@g-r-media.de"
-                  className="text-sm font-sans text-[#888] hover:text-[#c8ff00] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[4px]"
+                  className="text-sm font-sans text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] rounded-[4px]"
                 >
                   ronny-goersch@g-r-media.de
                 </a>
@@ -52,7 +52,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright */}
-          <p className="text-sm font-sans text-[#888]">
+          <p className="text-sm font-sans text-[var(--text-muted)]">
             &copy; 2026 GR Media &mdash; Alle Rechte vorbehalten
           </p>
         </div>

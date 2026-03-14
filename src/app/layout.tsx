@@ -4,6 +4,7 @@ import './globals.css'
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import CookieBanner from '@/components/cookie-banner'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -38,12 +39,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="de" className={`${syne.variable} ${dmSans.variable}`}>
-      <body className="bg-black text-white font-sans antialiased overflow-x-hidden">
-        <Nav />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <CookieBanner />
+    <html lang="de" className={`${syne.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <body className="bg-[var(--bg)] text-[var(--text)] font-sans antialiased overflow-x-hidden">
+        <ThemeProvider>
+          <Nav />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <CookieBanner />
+        </ThemeProvider>
       </body>
     </html>
   )
