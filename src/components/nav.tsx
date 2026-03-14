@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -32,9 +33,17 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-display font-extrabold text-xl tracking-tight text-[#f5f3ee] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[4px]"
+          className="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c8ff00] rounded-[4px]"
+          aria-label="GR Media — Startseite"
         >
-          GR<span className="text-[#c8ff00]">.</span>Media
+          <Image
+            src="/logo.png"
+            alt="GR Media Logo"
+            width={120}
+            height={80}
+            priority
+            className="h-10 w-auto bg-white rounded-[4px] px-1"
+          />
         </Link>
 
         {/* Desktop navigation */}
